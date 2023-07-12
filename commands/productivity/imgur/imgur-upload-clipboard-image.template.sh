@@ -76,7 +76,7 @@ elif echo "$output" | grep -q 'Imgur is over capacity!'; then
     echo "From Imgur: Upload Error, try again" >&2
 else
     url="${output##*\"link\":\"}"
-    url="${url%%\"\}*}"
+    url="${url%%\"*}"
     delete_hash="${output##*<deletehash>}"
     delete_hash="${delete_hash%%</deletehash>*}"
 
